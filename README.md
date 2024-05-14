@@ -17,7 +17,18 @@ $ conda create -n image-captioning python=3.10
 ```bash
 $ conda activate image-captioning
 ```
-4) Install pytorch
+## Install Dependencies
+
+1) Install pytorch (cpu version)
 ```bash
 $ conda install pytorch torchvision cpuonly -c pytorch
 ```
+2) Install required packages 
+```bash
+$ pip install -r requirements.txt
+```
+## Setup the environment variables
+```bash
+$ pip cp .env.example .env
+```
+Set your environment variablesin the `.env` file.
