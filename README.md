@@ -17,3 +17,7 @@ $ conda create -n image-captioning python=3.10
 ```bash
 $ conda activate image-captioning
 ```
+4) Install pytorch
+```bash
+$ conda install pytorch torchvision cpuonly -c pytorch
+```
