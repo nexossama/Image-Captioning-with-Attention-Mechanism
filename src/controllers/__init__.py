@@ -1,0 +1,1 @@
+from controllers.GenerateController import GenerateController
