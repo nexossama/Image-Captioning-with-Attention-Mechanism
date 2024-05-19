@@ -20,7 +20,7 @@ class GenerateController:
     
     def generate_caption(self,image):
         src_path=os.path.dirname(os.path.dirname(__file__))
-        model_path=os.path.join(src_path,"assets","attention_model_state_200.pth")
+        model_path=os.path.join(src_path,"assets","attention_model_state_200_long_memory.pth")
         print(model_path)
         model = EncoderDecoder.load_model(model_path)
         
