@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routes import base , generate_story
+from .routes import base , generate_story
 from helpers.config import get_settings
 
 app = FastAPI()
