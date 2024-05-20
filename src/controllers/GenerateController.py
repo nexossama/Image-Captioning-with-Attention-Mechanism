@@ -7,6 +7,7 @@ from typing import List
 from PIL import Image
 from fastapi import UploadFile
 from helpers.config import get_settings
+from helpers.utils import download_model
 from models.ImageCaptioning import EncoderDecoder
 import dill as pickle
 import pandas as pd
@@ -19,6 +20,7 @@ class GenerateController:
         self.app_settings = get_settings()
     
     def generate_caption(self,image):
+        download_model()
         src_path=os.path.dirname(os.path.dirname(__file__))
         model_path=os.path.join(src_path,"assets","attention_model_state_200_long_memory.pth")
         print(model_path)
