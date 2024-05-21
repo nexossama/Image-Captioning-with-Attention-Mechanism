@@ -12,7 +12,6 @@ spacy==3.7.4
 annotated-types==0.6.0
 anyio==4.3.0
 beautifulsoup4==4.12.3
-blas==1.0
 brotli-python==1.0.9
 bzip2==1.0.8
 ca-certificates==2024.3.11
