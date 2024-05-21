@@ -11,6 +11,8 @@ from helpers.utils import download_model
 from models.ImageCaptioning import EncoderDecoder
 import dill as pickle
 import pandas as pd
+import google.generativeai as genai
+from helpers.config import get_settings, Settings
 
 logger = logging.getLogger('uvicorn.error')
 
@@ -35,8 +37,16 @@ class GenerateController:
         
         return caption
     
+    def generate_story(self,captions,story_type):
+        genai.configure(api_key=self.app_settings.GEMINI_KEY)
+        model = genai.GenerativeModel('gemini-1.5-pro-latest')
 
-    async def create_story(self, files: List[UploadFile]) -> List[str]:
+        captions_sentence = " ".join([caption[:-6]for caption in captions]) 
+        print(captions_sentence)
+        response = model.generate_content(f"in one paragraphe of 5 lines , with 5 years old simple english ,tell me a {story_type} story based on this sentences : '{captions_sentence}'")
+        return captions,response.text
+    
+    async def create_story(self, files: List[UploadFile], story_type: str) -> List[str]:
         captions = []
         for file in files:
             image_data = await file.read()
@@ -44,4 +54,4 @@ class GenerateController:
             img = Image.open(io.BytesIO(image_data)).convert("RGB")
             caption = self.generate_caption(img)
             captions.append(caption)
-        return captions
+        return self.generate_story(captions,story_type)

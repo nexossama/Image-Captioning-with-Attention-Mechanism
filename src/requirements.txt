@@ -6,4 +6,5 @@ pydantic-settings==2.2.1
 pillow==10.3.0
 dill==0.3.8
 gdown==5.2.0
+google-generativeai==0.5.4
 

@@ -32,12 +32,6 @@ def download_file_if_not_exists(url, destination):
     except Exception as e:
         print(f"Failed to download file. Error: {e}")
 
-
-# Usage example
-url = 'https://example.com/path/to/file.pth'
-destination_path = 'path/to/your/destination/file.pth'
-download_file_if_not_exists(url, destination_path)
-
 def download_model():
     url = 'https://drive.google.com/uc?/export=download&id=1K5nICnO0SnK6HOTqTuSvZsArpbmRf9jr'
     src_path=os.path.dirname(os.path.dirname(__file__))
