@@ -9,8 +9,6 @@ gdown==5.2.0
 google-generativeai==0.5.4
 numpy==1.26.4
 spacy==3.7.4
-_libgcc_mutex=0.1=main
-_openmp_mutex=5.1=1_gnu
 annotated-types=0.6.0=pypi_0
 anyio=4.3.0=pypi_0
 beautifulsoup4=4.12.3=pypi_0
