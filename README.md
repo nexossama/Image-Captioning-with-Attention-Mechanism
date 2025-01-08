@@ -14,6 +14,9 @@ This project is an innovative AI-powered storytelling application that transform
    - You can specify your preferred storytelling style (e.g., funny, sad, horror, etc.).
    - Gemini uses the image captions to craft a unique, style-specific story that brings your images to life.
 
+## Project Demo
+https://github.com/user-attachments/assets/cbec7bca-e59c-463f-8409-f2c008d39f93
+
 ## Project architecture
 
 - System architecture
@@ -28,6 +31,7 @@ This project is an innovative AI-powered storytelling application that transform
 The attention mechanism combines short and long-term memory to create a more intelligent understanding of the image and its context, allowing the model to remember and reference important details throughout the entire caption generation process.
 
 for more details about the building process of the model ,you can check [Image-captioning-with-Attention.ipynb](assets/Image-captioning-with-Attention.ipynb) file in assets folder
+
 ## Prerequisites
 
 - Anaconda or Miniconda
