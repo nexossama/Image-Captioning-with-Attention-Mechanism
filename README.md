@@ -110,16 +110,12 @@ Thanks to the amazing people who have contributed to this project! 💪🚀
         <br/>
         <sub><b>Aymane Maghouti</b></sub>
       </a>
-      <br/>
-      📈 📖
     </td>
     <td align="center">
       <a href="https://github.com/nexossama">
         <img src="https://avatars.githubusercontent.com/nexossama" width="80px;" alt="Colleague 3"/> <br/>
         <sub><b>Ossama Outmani</b></sub>
       </a>
-      <br/>
-      🗂️ 🔬 </td>
   </tr>
 </table>
 
