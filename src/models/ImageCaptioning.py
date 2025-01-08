@@ -14,7 +14,6 @@ from torch.nn.utils.rnn import pad_sequence
 from torch.utils.data import DataLoader,Dataset
 from torch import optim
 from torch.nn import functional
-from torchvision import transforms
 from torchvision import models
 from models.FlickrDataset import FlickrDataset
 

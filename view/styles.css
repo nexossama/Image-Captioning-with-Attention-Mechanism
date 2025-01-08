@@ -1,0 +1,34 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+}
+
+
+.night-mode {
+    background-color: #121212; /* Dark background color */
+    color: #ffffff; /* Light text color */
+}
+
+.night-mode label  {
+    color: #ffffff; /* Light text color for labels */
+}
+
+.night-mode select  {
+    color: #121212; /* Light text color for labels */
+}
+
+.night-mode p  {
+    color:#ffffff; /* Light text color for labels */
+}
+
+.night-mode h2  {
+    color:#ffffff; /* Light text color for labels */
+}

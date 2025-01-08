@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BedTime Story</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="bg-indigo-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex">
+                    <img src="images/logo.png" alt="App Logo" class="h-8">
+                    <a href="index.html" class="text-white font-bold text-xl px-5">BedTime Story</a>
+                </div>
+                <!-- Menu -->
+                <div class=" md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="text-white hover:bg-indigo-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium ">Home</a>
+                        <a href="about.html" class="text-white hover:bg-indigo-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium">About</a>
+                        <button id="nightModeToggle" class="text-white hover:bg-indigo-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium">Night Mode</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto py-10">
+        <h1 class="text-3xl font-semibold text-center mb-5">Story Generator</h1>
+        <form id="storyForm" class="max-w-lg mx-auto">
+            <div class="mb-4">
+                <label for="images" class="block text-sm font-medium text-gray-700 mb-2 ">Upload Images:</label>
+                <input type="file" id="images" name="images[]" multiple accept="image/*" class="">
+            </div>
+            <!-- Display selected images -->
+            <div id="imagePreview" class="grid grid-cols-1 gap-4 md:grid-cols-3"></div>
+
+            <hr class="my-4 border-t-2 border-gray-300 ">
+
+            <div class="mb-4">
+
+                <label for="storyType" class="block text-sm font-medium text-gray-700">Select Story Type:</label>
+                <select id="storyType" name="storyType" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option value="funny">Funny</option>
+                    <option value="sad">Sad</option>
+                    <option value="horror">horror</option>
+                    <option value="action">action</option>
+
+                    <!-- Add more story types as needed -->
+                </select>
+            </div>
+            <div class="flex justify-center">
+                <button type="button" id="generateStory" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    Generate Story
+                </button>
+            </div>
+            <!-- Display generated story -->
+            <div id="generatedStory" class="mt-5 text-lg text-justify"></div>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-6">
+        <div class="container mx-auto text-center text-gray-400">
+            <p class="text-sm">&copy; 2024 BedTime Story | All rights reserved.</p>
+            <div class="mt-2">
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+
+
+</body>
+
+</html>

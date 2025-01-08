@@ -20,15 +20,15 @@ class GenerateController:
     
     def __init__(self):
         self.app_settings = get_settings()
+        download_model()
+        self.src_path=os.path.dirname(os.path.dirname(__file__))
+        self.model_path=os.path.join(self.src_path,"assets","attention_model_state_200_long_memory.pth")
     
     def generate_caption(self,image):
-        download_model()
-        src_path=os.path.dirname(os.path.dirname(__file__))
-        model_path=os.path.join(src_path,"assets","attention_model_state_200_long_memory.pth")
-        print(model_path)
-        model = EncoderDecoder.load_model(model_path)
+
+        model = EncoderDecoder.load_model(self.model_path)
         
-        train_dataset_path=os.path.join(src_path,"assets","train_dataset (1).pkl")
+        train_dataset_path=os.path.join(self.src_path,"assets","train_dataset (1).pkl")
         with open(train_dataset_path,"rb")as f:
             train_dataset=pickle.load(f)
         model.train_dataset=train_dataset
@@ -39,11 +39,14 @@ class GenerateController:
     
     def generate_story(self,captions,story_type):
         genai.configure(api_key=self.app_settings.GEMINI_KEY)
-        model = genai.GenerativeModel('gemini-1.5-pro-latest')
+        model = genai.GenerativeModel('gemini-2.0-flash-exp')
 
         captions_sentence = " ".join([caption[:-6]for caption in captions]) 
         print(captions_sentence)
-        response = model.generate_content(f"in one paragraphe of 5 lines , with 5 years old simple english ,tell me a {story_type} story based on this sentences : '{captions_sentence}'")
+        try:
+            response = model.generate_content(f"in one paragraphe of 5 lines , with a simple english ,tell me a {story_type} story based on this sentences : '{captions_sentence}'")
+        except:
+            return captions, "error while generating story"
         return captions,response.text
     
     async def create_story(self, files: List[UploadFile], story_type: str) -> List[str]:
